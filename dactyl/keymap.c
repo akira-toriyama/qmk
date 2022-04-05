@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
-    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   XXXXXXXXXX,
-    XXXXXXXXXX, KC_RALT,                                                                            XXXXXXXXXX, XXXXXXXXXX
+    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   KC_F19, // KC_F19 -> BT用
+    XXXXXXXXXX, KC_RALT,                                                                            KC_F18, XXXXXXXXXX // KC_F18 -> BT用
   ),
 
   [NUMBER] = LAYOUT_6x6_kinesis(
@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYMBOL2] = LAYOUT_6x6_kinesis(
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_CIRC,    KC_LABK,    KC_RABK,    KC_LBRACKET, KC_RBRACKET, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_CIRC,    KC_LABK,    KC_RABK,    KC_LBRACKET,KC_RBRACKET,XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_EQUAL,   KC_PLUS,    KC_MINUS,   KC_ASTR,    KC_PERC,    KC_DLR,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_TILD,    KC_LPRN,    KC_RPRN,    KC_LCBR,    KC_RCBR,    XXXXXXXXXX,
 
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_F1,      KC_F2,      KC_F3,      KC_F4,      XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXXXXX,
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_F9,      KC_F10,      KC_F11,      KC_F12,      XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_F9,      KC_F10,     KC_F11,     KC_F12,      XXXXXXXXXX,
 
     XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
