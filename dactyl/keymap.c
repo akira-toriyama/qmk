@@ -50,8 +50,11 @@ enum custom_keycodes {
 #define MY_KC_18 KC_F15
 #define MY_KC_19 KC_F16
 #define MY_KC_20 KC_F17
-#define MY_KC_21 KC_F18
-#define MY_KC_22 KC_F19
+
+// BT用
+#define MY_KC_BT1 KC_F18
+#define MY_KC_BT2 KC_F19
+
 
 // エイリアス
 #define MY_KC_JP KC_LANG1
@@ -74,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
-    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   KC_F19, // KC_F19 -> BT用key
-    XXXXXXXXXX, KC_RALT,                                                                            KC_F18, XXXXXXXXXX // KC_F18 -> BT用key
+    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   MY_KC_BT2,
+    XXXXXXXXXX, KC_RALT,                                                                            MY_KC_BT1,  XXXXXXXXXX
   ),
 
   [NUMBER] = LAYOUT_6x6_kinesis(
@@ -482,19 +485,19 @@ void set_modifier_key_up(uint16_t keycode) {
 }
 
 void pre_send_hankaku(void) {
-  // for (int i = 0; i <= one_shot_modifiers_cnt; i++) {
-  //     if (one_shot_modifiers[i].is_down) {
-  //         unregister_code(one_shot_modifiers[i].key);
-  //     }
-  // }
+  for (int i = 0; i <= one_shot_modifiers_cnt; i++) {
+      if (one_shot_modifiers[i].is_down) {
+          unregister_code(one_shot_modifiers[i].key);
+      }
+  }
 
   key_send(MY_KC_EN);
 
-  // for (int i = 0; i <= one_shot_modifiers_cnt; i++) {
-  //     if (one_shot_modifiers[i].is_down) {
-  //         register_code(one_shot_modifiers[i].key);
-  //     }
-  // }
+  for (int i = 0; i <= one_shot_modifiers_cnt; i++) {
+      if (one_shot_modifiers[i].is_down) {
+          register_code(one_shot_modifiers[i].key);
+      }
+  }
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t * record) {
