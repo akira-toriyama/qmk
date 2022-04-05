@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
-    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   KC_F19, // KC_F19 -> BT用
-    XXXXXXXXXX, KC_RALT,                                                                            KC_F18, XXXXXXXXXX // KC_F18 -> BT用
+    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   KC_F19, // KC_F19 -> BT用key
+    XXXXXXXXXX, KC_RALT,                                                                            KC_F18, XXXXXXXXXX // KC_F18 -> BT用key
   ),
 
   [NUMBER] = LAYOUT_6x6_kinesis(
