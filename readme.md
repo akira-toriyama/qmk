@@ -17,9 +17,11 @@ open /Volumes/workspace/qmk/qmk_firmware/handwired_dactyl_manuform_6x6_kinesis_d
 ## ploopyco/trackball_thumb
 
 公式に入っていないので、暫定対応
+
 https://github.com/qmk/qmk_firmware/tree/master/keyboards/ploopyco
 
 下記からコピペ
+
 https://github.com/ploopyco/qmk-firmware-ploopyco-dev/blob/ploopyco/thumb/keyboards/ploopyco/trackball_thumb/
 
 
