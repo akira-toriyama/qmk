@@ -196,7 +196,7 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_SYM1,
-    MY_KC_EN,
+    XXXXXXXXXX,
     MY_KC_SYM1,
     SYMBOL1,
     false
@@ -210,7 +210,7 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_NUM,
-    MY_KC_JP,
+    XXXXXXXXXX,
     MY_KC_NUM,
     NUMBER,
     false
@@ -238,14 +238,14 @@ simultaneously_one_shot_modifier simultaneously_one_shot_modifiers[] = {
   {
     MY_KC_LL,
     MY_KC_LR,
-    XXXXXXXXXX,
+    MY_KC_JP,
     MY_KC_LL,
     MY_KC_LR
   },
   {
     MY_KC_LR,
     MY_KC_LL,
-    XXXXXXXXXX,
+    MY_KC_JP,
     MY_KC_LR,
     MY_KC_LL
   },
@@ -254,14 +254,14 @@ simultaneously_one_shot_modifier simultaneously_one_shot_modifiers[] = {
   {
     MY_KC_RL,
     MY_KC_RR,
-    XXXXXXXXXX,
+    MY_KC_EN,
     MY_KC_LL,
     MY_KC_LR
   },
   {
     MY_KC_RR,
     MY_KC_RL,
-    XXXXXXXXXX,
+    MY_KC_EN,
     MY_KC_LR,
     MY_KC_LL
   },
