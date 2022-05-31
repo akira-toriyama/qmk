@@ -45,16 +45,9 @@ enum custom_keycodes {
 #define MY_KC_13 KC_KP_MINUS
 #define MY_KC_14 KC_KP_SLASH
 #define MY_KC_15 KC_KP_ASTERISK
-#define MY_KC_16 KC_F13
-#define MY_KC_17 KC_F14
-#define MY_KC_18 KC_F15
-#define MY_KC_19 KC_F16
-#define MY_KC_20 KC_F17
-
-// BT用
-#define MY_KC_BT1 KC_F18
-#define MY_KC_BT2 KC_F19
-
+#define MY_KC_16 KC_NONUS_BACKSLASH
+#define MY_KC_17 KC_NUM_LOCK
+#define MY_KC_18 KC_KP_ENTER
 
 // エイリアス
 #define MY_KC_JP KC_LANG1
@@ -77,8 +70,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
-    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   MY_KC_BT2,
-    XXXXXXXXXX, KC_RALT,                                                                            MY_KC_BT1,  XXXXXXXXXX
+    KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   XXXXXXXXXX,
+    XXXXXXXXXX, KC_RALT,                                                                            XXXXXXXXXX, XXXXXXXXXX
   ),
 
   [NUMBER] = LAYOUT_6x6_kinesis(
@@ -136,9 +129,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [MY_FN] = LAYOUT_6x6_kinesis(
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, MY_KC_1,    MY_KC_2,    MY_KC_3,    MY_KC_4,    MY_KC_5,                            XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
-    XXXXXXXXXX, MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_16,   MY_KC_1,    MY_KC_2,    MY_KC_3,    MY_KC_4,    MY_KC_5,                            XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_17,   MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
+    MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
 
     XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
