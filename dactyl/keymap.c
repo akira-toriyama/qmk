@@ -9,8 +9,7 @@
 #define SYMBOL1 2
 #define SYMBOL2 3
 #define FN 4
-#define MY_FN 5
-#define MOUSE 6
+#define MY_SPEC_1 5
 
 // 親指モディファイ
 #define MY_KC_LL KC_LSHIFT
@@ -25,11 +24,12 @@ enum custom_keycodes {
     MY_KC_SYM1,
     MY_KC_SYM2,
     MY_KC_NUM,
-    MY_KC_SPEC
+    MY_KC_SPEC_1,
 };
 
 // OSに渡す用
 #define MY_KC_0 KC_KP_0
+
 #define MY_KC_1 KC_KP_1
 #define MY_KC_2 KC_KP_2
 #define MY_KC_3 KC_KP_3
@@ -49,6 +49,25 @@ enum custom_keycodes {
 #define MY_KC_17 KC_NUM_LOCK
 #define MY_KC_18 KC_KP_ENTER
 
+#define MY_KC_1_MEH MEH(KC_KP_1)
+#define MY_KC_2_MEH MEH(KC_KP_2)
+#define MY_KC_3_MEH MEH(KC_KP_3)
+#define MY_KC_4_MEH MEH(KC_KP_4)
+#define MY_KC_5_MEH MEH(KC_KP_5)
+#define MY_KC_6_MEH MEH(KC_KP_6)
+#define MY_KC_7_MEH MEH(KC_KP_7)
+#define MY_KC_8_MEH MEH(KC_KP_8)
+#define MY_KC_9_MEH MEH(KC_KP_9)
+#define MY_KC_10_MEH MEH(KC_KP_PLUS)
+#define MY_KC_11_MEH MEH(KC_KP_EQUAL)
+#define MY_KC_12_MEH MEH(KC_KP_DOT)
+#define MY_KC_13_MEH MEH(KC_KP_MINUS)
+#define MY_KC_14_MEH MEH(KC_KP_SLASH)
+#define MY_KC_15_MEH MEH(KC_KP_ASTERISK)
+#define MY_KC_16_MEH MEH(KC_NONUS_BACKSLASH)
+#define MY_KC_17_MEH MEH(KC_NUM_LOCK)
+#define MY_KC_18_MEH MEH(KC_KP_ENTER)
+
 // エイリアス
 #define MY_KC_JP KC_LANG1
 #define MY_KC_EN KC_LANG2
@@ -65,8 +84,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       XXXXXXXXXX,
-    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       MY_KC_SPEC, KC_BSPACE,
-    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      KC_TAB,     KC_DEL,     KC_ENTER,
+    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       MY_KC_SPEC_1, KC_BSPACE,
+    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      KC_TAB,     KC_DEL, KC_ENTER,
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
@@ -126,18 +145,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
   ),
 
-  [MY_FN] = LAYOUT_6x6_kinesis(
+  [MY_SPEC_1] = LAYOUT_6x6_kinesis(
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_16,   MY_KC_1,    MY_KC_2,    MY_KC_3,    MY_KC_4,    MY_KC_5,                            XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_17,   MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
-    MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________, XXXXXXXXXX,
 
     XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
   )
+
 };
 
 static bool one_shot_modifiers_through_flg = false;
@@ -209,10 +229,10 @@ one_shot_modifier one_shot_modifiers[] = {
     false
   },
   {
-    MY_KC_SPEC,
+    MY_KC_SPEC_1,
     MY_KC_0,
-    MY_KC_SPEC,
-    MY_FN,
+    MY_KC_SPEC_1,
+    MY_SPEC_1,
     false
   },
 };
@@ -514,7 +534,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
   case MY_KC_SYM1:
   case MY_KC_SYM2:
   case MY_KC_NUM:
-  case MY_KC_SPEC:
+  case MY_KC_SPEC_1:
     if (record -> event.pressed) {
       set_modifier_key_down(keycode);
       return true;
