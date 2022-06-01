@@ -49,25 +49,6 @@ enum custom_keycodes {
 #define MY_KC_17 KC_NUM_LOCK
 #define MY_KC_18 KC_KP_ENTER
 
-#define MY_KC_1_MEH MEH(KC_KP_1)
-#define MY_KC_2_MEH MEH(KC_KP_2)
-#define MY_KC_3_MEH MEH(KC_KP_3)
-#define MY_KC_4_MEH MEH(KC_KP_4)
-#define MY_KC_5_MEH MEH(KC_KP_5)
-#define MY_KC_6_MEH MEH(KC_KP_6)
-#define MY_KC_7_MEH MEH(KC_KP_7)
-#define MY_KC_8_MEH MEH(KC_KP_8)
-#define MY_KC_9_MEH MEH(KC_KP_9)
-#define MY_KC_10_MEH MEH(KC_KP_PLUS)
-#define MY_KC_11_MEH MEH(KC_KP_EQUAL)
-#define MY_KC_12_MEH MEH(KC_KP_DOT)
-#define MY_KC_13_MEH MEH(KC_KP_MINUS)
-#define MY_KC_14_MEH MEH(KC_KP_SLASH)
-#define MY_KC_15_MEH MEH(KC_KP_ASTERISK)
-#define MY_KC_16_MEH MEH(KC_NONUS_BACKSLASH)
-#define MY_KC_17_MEH MEH(KC_NUM_LOCK)
-#define MY_KC_18_MEH MEH(KC_KP_ENTER)
-
 // エイリアス
 #define MY_KC_JP KC_LANG1
 #define MY_KC_EN KC_LANG2
