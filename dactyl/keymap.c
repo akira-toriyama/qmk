@@ -10,6 +10,8 @@
 #define SYMBOL2 3
 #define FN 4
 #define MY_SPEC_1 5
+#define MY_SPEC_2 6
+#define MY_SPEC_3 7
 
 // 親指モディファイ
 #define MY_KC_LL KC_LSHIFT
@@ -25,6 +27,8 @@ enum custom_keycodes {
     MY_KC_SYM2,
     MY_KC_NUM,
     MY_KC_SPEC_1,
+    MY_KC_SPEC_2,
+    MY_KC_SPEC_3,
 };
 
 // OSに渡す用
@@ -49,6 +53,46 @@ enum custom_keycodes {
 #define MY_KC_17 KC_NUM_LOCK
 #define MY_KC_18 KC_KP_ENTER
 
+// Ctrl + Shift + Alt + kc
+#define MY_KC_1_MEH MEH(KC_KP_1)
+#define MY_KC_2_MEH MEH(KC_KP_2)
+#define MY_KC_3_MEH MEH(KC_KP_3)
+#define MY_KC_4_MEH MEH(KC_KP_4)
+#define MY_KC_5_MEH MEH(KC_KP_5)
+#define MY_KC_6_MEH MEH(KC_KP_6)
+#define MY_KC_7_MEH MEH(KC_KP_7)
+#define MY_KC_8_MEH MEH(KC_KP_8)
+#define MY_KC_9_MEH MEH(KC_KP_9)
+#define MY_KC_10_MEH MEH(KC_KP_PLUS)
+#define MY_KC_11_MEH MEH(KC_KP_EQUAL)
+#define MY_KC_12_MEH MEH(KC_KP_DOT)
+#define MY_KC_13_MEH MEH(KC_KP_MINUS)
+#define MY_KC_14_MEH MEH(KC_KP_SLASH)
+#define MY_KC_15_MEH MEH(KC_KP_ASTERISK)
+#define MY_KC_16_MEH MEH(KC_NONUS_BACKSLASH)
+#define MY_KC_17_MEH MEH(KC_NUM_LOCK)
+#define MY_KC_18_MEH MEH(KC_KP_ENTER)
+
+// Ctrl + Shift + Alt + Gui + kc
+#define MY_KC_1_HYPR HYPR(KC_KP_1)
+#define MY_KC_2_HYPR HYPR(KC_KP_2)
+#define MY_KC_3_HYPR HYPR(KC_KP_3)
+#define MY_KC_4_HYPR HYPR(KC_KP_4)
+#define MY_KC_5_HYPR HYPR(KC_KP_5)
+#define MY_KC_6_HYPR HYPR(KC_KP_6)
+#define MY_KC_7_HYPR HYPR(KC_KP_7)
+#define MY_KC_8_HYPR HYPR(KC_KP_8)
+#define MY_KC_9_HYPR HYPR(KC_KP_9)
+#define MY_KC_10_HYPR HYPR(KC_KP_PLUS)
+#define MY_KC_11_HYPR HYPR(KC_KP_EQUAL)
+#define MY_KC_12_HYPR HYPR(KC_KP_DOT)
+#define MY_KC_13_HYPR HYPR(KC_KP_MINUS)
+#define MY_KC_14_HYPR HYPR(KC_KP_SLASH)
+#define MY_KC_15_HYPR HYPR(KC_KP_ASTERISK)
+#define MY_KC_16_HYPR HYPR(KC_NONUS_BACKSLASH)
+#define MY_KC_17_HYPR HYPR(KC_NUM_LOCK)
+#define MY_KC_18_HYPR HYPR(KC_KP_ENTER)
+
 // エイリアス
 #define MY_KC_JP KC_LANG1
 #define MY_KC_EN KC_LANG2
@@ -65,8 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       XXXXXXXXXX,
-    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       MY_KC_SPEC_1, KC_BSPACE,
-    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      KC_TAB,     KC_DEL, KC_ENTER,
+    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       LT(MY_SPEC_1, MY_KC_0), KC_BSPACE,
+    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      LT(MY_SPEC_2, KC_TAB),  LT(MY_SPEC_3, KC_DEL), KC_ENTER,
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
@@ -137,8 +181,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __________, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
-  )
+  ),
 
+  [MY_SPEC_2] = LAYOUT_6x6_kinesis(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_16_MEH,   MY_KC_1_MEH,    MY_KC_2_MEH,    MY_KC_3_MEH,    MY_KC_4_MEH,    MY_KC_5_MEH,    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_17_MEH,   MY_KC_6_MEH,    MY_KC_7_MEH,    MY_KC_8_MEH,    MY_KC_9_MEH,    MY_KC_10_MEH,   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
+    MY_KC_18_MEH,   MY_KC_11_MEH,   MY_KC_12_MEH,   MY_KC_13_MEH,   MY_KC_14_MEH,   MY_KC_15_MEH,   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________, XXXXXXXXXX,
+
+    XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    __________, __________,                                                                         __________, XXXXXXXXXX,
+    XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
+  ),
+
+  [MY_SPEC_3] = LAYOUT_6x6_kinesis(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_16_HYPR,   MY_KC_1_HYPR,    MY_KC_2_HYPR,    MY_KC_3_HYPR,    MY_KC_4_HYPR,    MY_KC_5_HYPR,                            XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_17_HYPR,   MY_KC_6_HYPR,    MY_KC_7_HYPR,    MY_KC_8_HYPR,    MY_KC_9_HYPR,    MY_KC_10_HYPR,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
+    MY_KC_18_HYPR,   MY_KC_11_HYPR,   MY_KC_12_HYPR,   MY_KC_13_HYPR,   MY_KC_14_HYPR,   MY_KC_15_HYPR,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________, XXXXXXXXXX,
+
+    XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    __________, __________,                                                                         __________, XXXXXXXXXX,
+    XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
+  )
 };
 
 static bool one_shot_modifiers_through_flg = false;
@@ -207,13 +276,6 @@ one_shot_modifier one_shot_modifiers[] = {
     XXXXXXXXXX,
     MY_KC_NUM,
     NUMBER,
-    false
-  },
-  {
-    MY_KC_SPEC_1,
-    MY_KC_0,
-    MY_KC_SPEC_1,
-    MY_SPEC_1,
     false
   },
 };
@@ -515,7 +577,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
   case MY_KC_SYM1:
   case MY_KC_SYM2:
   case MY_KC_NUM:
-  case MY_KC_SPEC_1:
     if (record -> event.pressed) {
       set_modifier_key_down(keycode);
       return true;
