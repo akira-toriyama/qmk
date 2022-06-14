@@ -34,6 +34,7 @@ enum custom_keycodes {
 // OSに渡す用
 #define MY_KC_0 KC_KP_0
 
+// テンキー
 #define MY_KC_1 KC_KP_1
 #define MY_KC_2 KC_KP_2
 #define MY_KC_3 KC_KP_3
@@ -53,7 +54,7 @@ enum custom_keycodes {
 #define MY_KC_17 KC_NUM_LOCK
 #define MY_KC_18 KC_KP_ENTER
 
-// Ctrl + Shift + Alt + kc
+// テンキー + Ctrl + Shift + Alt + kc
 #define MY_KC_1_MEH MEH(KC_KP_1)
 #define MY_KC_2_MEH MEH(KC_KP_2)
 #define MY_KC_3_MEH MEH(KC_KP_3)
@@ -73,7 +74,7 @@ enum custom_keycodes {
 #define MY_KC_17_MEH MEH(KC_NUM_LOCK)
 #define MY_KC_18_MEH MEH(KC_KP_ENTER)
 
-// Ctrl + Shift + Alt + Gui + kc
+// テンキー + Ctrl + Shift + Alt + Gui + kc
 #define MY_KC_1_HYPR HYPR(KC_KP_1)
 #define MY_KC_2_HYPR HYPR(KC_KP_2)
 #define MY_KC_3_HYPR HYPR(KC_KP_3)
@@ -109,8 +110,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       XXXXXXXXXX,
-    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       LT(MY_SPEC_1, MY_KC_0), KC_BSPACE,
-    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      LT(MY_SPEC_2, KC_TAB),  LT(MY_SPEC_3, KC_DEL), KC_ENTER,
+    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       MY_KC_SPEC_1, KC_BSPACE,
+    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      MY_KC_SPEC_2,  MY_KC_SPEC_3, KC_ENTER,
 
     XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                                 KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
@@ -122,8 +123,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_7,       KC_8,       KC_9,       XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_4,       KC_5,       KC_6,       XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_0,       KC_1,       KC_2,       KC_3,       XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_4,       KC_5,       KC_6,       __________, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_0,       KC_1,       KC_2,       KC_3,       __________, XXXXXXXXXX,
 
     XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
@@ -170,6 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
   ),
 
+
   [MY_SPEC_1] = LAYOUT_6x6_kinesis(
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
@@ -177,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MY_KC_17,   MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
     MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________, XXXXXXXXXX,
 
-    XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, __________, __________, __________,                                                  XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
@@ -190,7 +192,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MY_KC_17_MEH,   MY_KC_6_MEH,    MY_KC_7_MEH,    MY_KC_8_MEH,    MY_KC_9_MEH,    MY_KC_10_MEH,   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
     MY_KC_18_MEH,   MY_KC_11_MEH,   MY_KC_12_MEH,   MY_KC_13_MEH,   MY_KC_14_MEH,   MY_KC_15_MEH,   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________, XXXXXXXXXX,
 
-    XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, __________, __________, __________,                                                  XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
@@ -203,7 +205,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MY_KC_17_HYPR,   MY_KC_6_HYPR,    MY_KC_7_HYPR,    MY_KC_8_HYPR,    MY_KC_9_HYPR,    MY_KC_10_HYPR,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, XXXXXXXXXX,
     MY_KC_18_HYPR,   MY_KC_11_HYPR,   MY_KC_12_HYPR,   MY_KC_13_HYPR,   MY_KC_14_HYPR,   MY_KC_15_HYPR,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________, XXXXXXXXXX,
 
-    XXXXXXXXXX, __________, __________, __________,                                                 XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, __________, __________, __________,                                                  XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     __________, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, __________,                                                                         __________, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX,                                                                         XXXXXXXXXX, XXXXXXXXXX
@@ -248,6 +250,27 @@ one_shot_modifier one_shot_modifiers[] = {
     KC_SPACE,
     MY_KC_RR,
     BASE,
+    false
+  },
+  {
+    MY_KC_SPEC_1,
+    MY_KC_0,
+    MY_KC_SPEC_1,
+    MY_SPEC_1,
+    false
+  },
+  {
+    MY_KC_SPEC_2,
+    KC_TAB,
+    MY_KC_SPEC_2,
+    MY_SPEC_2,
+    false
+  },
+  {
+    MY_KC_SPEC_3,
+    KC_DEL,
+    MY_KC_SPEC_3,
+    MY_SPEC_3,
     false
   },
   {
@@ -573,6 +596,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
     return true;
 
     // レイヤー切り変え
+  case MY_KC_SPEC_1:
+  case MY_KC_SPEC_2:
+  case MY_KC_SPEC_3:
   case MY_KC_FN:
   case MY_KC_SYM1:
   case MY_KC_SYM2:
