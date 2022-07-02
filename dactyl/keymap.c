@@ -282,7 +282,7 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_SYM1,
-    XXXXXXXXXX,
+    KC_TAB,
     MY_KC_SYM1,
     SYMBOL1,
     false
@@ -296,7 +296,7 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_NUM,
-    XXXXXXXXXX,
+    KC_DEL,
     MY_KC_NUM,
     NUMBER,
     false
