@@ -275,7 +275,7 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_FN,
-    XXXXXXXXXX,
+    KC_ENTER,
     MY_KC_FN,
     FN,
     false
@@ -289,7 +289,7 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_SYM2,
-    XXXXXXXXXX,
+    KC_BSPACE,
     MY_KC_SYM2,
     SYMBOL2,
     false
