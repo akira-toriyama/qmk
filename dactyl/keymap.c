@@ -94,6 +94,12 @@ enum custom_keycodes {
 #define MY_KC_17_HYPR HYPR(KC_NUM_LOCK)
 #define MY_KC_18_HYPR HYPR(KC_KP_ENTER)
 
+// 親指用
+#define MY_KC_LL_RR KC_F19
+#define MY_KC_LR_RL KC_F18
+#define MY_KC_LL_RL KC_F17
+#define MY_KC_LR_RR KC_F16
+
 // エイリアス
 #define MY_KC_JP KC_LANG1
 #define MY_KC_EN KC_LANG2
@@ -349,14 +355,14 @@ simultaneously_one_shot_modifier simultaneously_one_shot_modifiers[] = {
   {
     MY_KC_LL,
     MY_KC_RR,
-    XXXXXXXXXX,
+    MY_KC_LL_RR,
     MY_KC_LL,
     MY_KC_RR
   },
   {
     MY_KC_RR,
     MY_KC_LL,
-    XXXXXXXXXX,
+    MY_KC_LL_RR,
     MY_KC_RR,
     MY_KC_LL
   },
@@ -365,14 +371,14 @@ simultaneously_one_shot_modifier simultaneously_one_shot_modifiers[] = {
   {
     MY_KC_LR,
     MY_KC_RL,
-    XXXXXXXXXX,
+    MY_KC_LR_RL,
     MY_KC_LR,
     MY_KC_RL
   },
   {
     MY_KC_RL,
     MY_KC_LR,
-    XXXXXXXXXX,
+    MY_KC_LR_RL,
     MY_KC_RL,
     MY_KC_LR
   },
@@ -381,14 +387,14 @@ simultaneously_one_shot_modifier simultaneously_one_shot_modifiers[] = {
   {
     MY_KC_LL,
     MY_KC_RL,
-    XXXXXXXXXX,
+    MY_KC_LL_RL,
     MY_KC_LL,
     MY_KC_RL
   },
   {
     MY_KC_RL,
     MY_KC_LL,
-    XXXXXXXXXX,
+    MY_KC_LL_RL,
     MY_KC_RL,
     MY_KC_LL
   },
@@ -397,14 +403,14 @@ simultaneously_one_shot_modifier simultaneously_one_shot_modifiers[] = {
   {
     MY_KC_LR,
     MY_KC_RR,
-    XXXXXXXXXX,
+    MY_KC_LL_RL,
     MY_KC_LR,
     MY_KC_RR
   },
   {
     MY_KC_RR,
     MY_KC_LR,
-    XXXXXXXXXX,
+    MY_KC_LL_RL,
     MY_KC_RR,
     MY_KC_LR
   },
