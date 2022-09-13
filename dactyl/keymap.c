@@ -1,5 +1,111 @@
 #include QMK_KEYBOARD_H
 
+enum custom_keycodes {
+  __________ = SAFE_RANGE,
+
+  XXXXXXXXXX,
+
+  // レイヤー
+  BASE,
+  NUMBER,
+  SYMBOL1,
+  SYMBOL2,
+  FN,
+  CURSOR,
+  MY_SPEC_1,
+  MY_SPEC_2,
+  MY_SPEC_3,
+
+  // 親指モディファイ
+  MY_KC_LL,
+  MY_KC_LR,
+  MY_KC_RL,
+  MY_KC_RR,
+
+
+  // OSに渡す用
+  MY_KC_0,
+
+  // テンキー
+  MY_KC_1,
+  MY_KC_2,
+  MY_KC_3,
+  MY_KC_4,
+  MY_KC_5,
+  MY_KC_6,
+  MY_KC_7,
+  MY_KC_8,
+  MY_KC_9,
+  MY_KC_10,
+  MY_KC_11,
+  MY_KC_12,
+  MY_KC_13,
+  MY_KC_14,
+  MY_KC_15,
+  MY_KC_16,
+  MY_KC_17,
+  MY_KC_18,
+
+  // テンキー + Ctrl + Shift + Alt + kc
+  MY_KC_1_MEH,
+  MY_KC_2_MEH,
+  MY_KC_3_MEH,
+  MY_KC_4_MEH,
+  MY_KC_5_MEH,
+  MY_KC_6_MEH,
+  MY_KC_7_MEH,
+  MY_KC_8_MEH,
+  MY_KC_9_MEH,
+  MY_KC_10_MEH,
+  MY_KC_11_MEH,
+  MY_KC_12_MEH,
+  MY_KC_13_MEH,
+  MY_KC_14_MEH,
+  MY_KC_15_MEH,
+  MY_KC_16_MEH,
+  MY_KC_17_MEH,
+  MY_KC_18_MEH,
+
+  // テンキー + Ctrl + Shift + Alt + Gui + kc
+  MY_KC_1_HYPR,
+  MY_KC_2_HYPR,
+  MY_KC_3_HYPR,
+  MY_KC_4_HYPR,
+  MY_KC_5_HYPR,
+  MY_KC_6_HYPR,
+  MY_KC_7_HYPR,
+  MY_KC_8_HYPR,
+  MY_KC_9_HYPR,
+  MY_KC_10_HYPR,
+  MY_KC_11_HYPR,
+  MY_KC_12_HYPR,
+  MY_KC_13_HYPR,
+  MY_KC_14_HYPR,
+  MY_KC_15_HYPR,
+  MY_KC_16_HYPR,
+  MY_KC_17_HYPR,
+  MY_KC_18_HYPR,
+
+  // 親指用
+  MY_KC_LL_RR,
+  MY_KC_LR_RL,
+  MY_KC_LL_RL,
+  MY_KC_LR_RR,
+
+  // エイリアス
+  MY_KC_JP,
+  MY_KC_EN,
+
+  MY_KC_SYM1,
+  MY_KC_SYM2,
+  MY_KC_NUM,
+  MY_KC_FN,
+  MY_KC_CURSOR,
+  MY_KC_SPEC_1,
+  MY_KC_SPEC_2,
+  MY_KC_SPEC_3,
+};
+
 #define __________ KC_TRNS
 #define XXXXXXXXXX KC_NO
 
@@ -20,17 +126,6 @@
 #define MY_KC_RL KC_LALT
 #define MY_KC_RR KC_LCTRL
 
-// レイヤー切り変え
-enum custom_keycodes {
-  KC_MAKE = SAFE_RANGE,
-    MY_KC_FN,
-    MY_KC_SYM1,
-    MY_KC_SYM2,
-    MY_KC_NUM,
-    MY_KC_SPEC_1,
-    MY_KC_SPEC_2,
-    MY_KC_SPEC_3,
-};
 
 // OSに渡す用
 #define MY_KC_0 KC_KP_0
@@ -120,8 +215,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       MY_KC_SPEC_1, KC_BSPACE,
     KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,       KC_UP,      MY_KC_SPEC_2,  MY_KC_SPEC_3, KC_ENTER,
 
-    XXXXXXXXXX, MY_KC_FN,   MY_KC_SYM2, MY_KC_SYM1,                                               KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
-    MY_KC_NUM,  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
+    XXXXXXXXXX, MO(FN),   MO(SYMBOL2), MO(SYMBOL1),                                               KC_DOWN,    KC_RIGHT,   XXXXXXXXXX, XXXXXXXXXX,
+    MO(NUMBER),  MY_KC_LL,                                                                           MY_KC_RR,   KC_LEFT,
     KC_RCTRL,   MY_KC_LR,                                                                           MY_KC_RL,   XXXXXXXXXX,
     XXXXXXXXXX, KC_RALT,                                                                            XXXXXXXXXX, XXXXXXXXXX
   ),
@@ -281,28 +376,28 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_FN,
-    KC_ENTER,
+    XXXXXXXXXX,
     MY_KC_FN,
     FN,
     false
   },
   {
     MY_KC_SYM1,
-    KC_TAB,
+    XXXXXXXXXX,
     MY_KC_SYM1,
     SYMBOL1,
     false
   },
   {
     MY_KC_SYM2,
-    KC_BSPACE,
+    XXXXXXXXXX,
     MY_KC_SYM2,
     SYMBOL2,
     false
   },
   {
     MY_KC_NUM,
-    KC_DEL,
+    XXXXXXXXXX,
     MY_KC_NUM,
     NUMBER,
     false
