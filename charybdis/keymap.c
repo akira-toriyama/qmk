@@ -18,8 +18,6 @@ enum custom_keycodes {
   _FN,
   _CURSOR,
   _MY_SPEC_1,
-  _MY_SPEC_2,
-  _MY_SPEC_3,
 
   // 装飾用
   __________,
@@ -124,8 +122,6 @@ enum custom_keycodes {
 #define _FN 4
 #define _CURSOR 5
 #define _MY_SPEC_1 6
-#define _MY_SPEC_2 7
-#define _MY_SPEC_3 8
 
 // 装飾用
 #define __________ KC_TRNS
@@ -220,84 +216,59 @@ enum custom_keycodes {
 #define W_ONE_SHOT_DOWN_TIME 100
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_charybdis_4x6(
-    XXXXXXXXXX, MY_KC_FN, MY_KC_SYM2, MY_KC_SYM1, MY_KC_NUM, XXXXXXXXXX,                              XXXXXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       XXXXXXXXXX,
-    KC_SPACE,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       MY_KC_SPEC_1, KC_BSPACE,
-    KC_ESCAPE,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M,      KC_UP,     MY_KC_SPEC_2,  MY_KC_SPEC_3, KC_ENTER,
-                                   MY_KC_LL, MY_KC_LR,   KC_MS_BTN3,                    MY_KC_RL,  MY_KC_RR,
-                                           KC_MS_BTN1, KC_MS_BTN2,                      MY_DRAG_SCROLL
-  ),
+[_BASE] = LAYOUT_charybdis_4x6(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    KC_TAB, KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,
+    MY_KC_SYM1,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       KC_M,      MY_KC_SYM2,
+    MY_KC_NUM,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_LEFT,     KC_DOWN,  KC_RIGHT,   KC_UP, MY_KC_FN,
+                                           MY_KC_LL, MY_KC_LR,   MY_DRAG_SCROLL,                 MY_KC_RL,  MY_KC_RR,
+                                                   KC_MS_BTN1, KC_MS_BTN2,                      MY_KC_SPEC_1
+),
 
-    [_NUMBER] = LAYOUT_charybdis_4x6(
+[_NUMBER] = LAYOUT_charybdis_4x6(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_7,       KC_8,       KC_9,       XXXXXXXXXX, XXXXXXXXXX,
-    __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_4,       KC_5,       KC_6,       __________, __________,
-    __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_0,       KC_1,       KC_2,       KC_3,       __________, __________,
-   XXXXXXXXXX, __________, __________, __________, __________, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
+    __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, KC_4,       KC_5,       KC_6,       XXXXXXXXXX, __________,
+    __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_0,       KC_1,       KC_2,       KC_3,       XXXXXXXXXX, __________,
+                                      __________, __________,  __________,                          __________, __________,
+                                                   __________, __________,                          __________
+),
 
-      [_SYMBOL1] = LAYOUT_charybdis_4x6(
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_UNDS,    KC_PIPE,    KC_AMPR,    KC_EXLM,    KC_QUESTION,XXXXXXXXXX,
-    __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_HASH,    KC_COMMA,   KC_DOT,     KC_SCOLON,  KC_COLON,   KC_AT,
-    __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_DQUO,    KC_QUOTE,   KC_GRAVE,   KC_SLASH,   KC_BSLASH,  XXXXXXXXXX,
-   XXXXXXXXXX, __________, __________, __________, __________, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
-
-        [_SYMBOL2] = LAYOUT_charybdis_4x6(
+[_SYMBOL1] = LAYOUT_charybdis_4x6(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_CIRC,    KC_LABK,    KC_RABK,    KC_LBRACKET,KC_RBRACKET,XXXXXXXXXX,
     __________, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_EQUAL,   KC_PLUS,    KC_MINUS,   KC_ASTR,    KC_PERC,    KC_DLR,
-   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              KC_TILD,    KC_LPRN,    KC_RPRN,    KC_LCBR,    KC_RCBR,    XXXXXXXXXX,
-   XXXXXXXXXX, __________, __________, __________, __________, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         KC_TILD,    KC_LPRN,    KC_RPRN,    KC_LCBR,    KC_RCBR,    __________,
+                                      __________, __________,  __________,                          __________, __________,
+                                                   __________, __________,                          __________
+),
 
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
+[_SYMBOL2] = LAYOUT_charybdis_4x6(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, KC_QUESTION,KC_EXLM,        KC_AMPR, KC_PIPE, KC_UNDS,                                    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    KC_AT,      KC_COLON,   KC_SCOLON,        KC_DOT, KC_COMMA, KC_HASH,                                          XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________,
+    __________, KC_BSLASH, KC_SLASH, KC_GRAVE, KC_QUOTE, KC_DQUO,                                   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________,
+                                      __________, __________,  __________,                          __________, __________,
+                                                   __________, __________,                          __________
+),
 
-          [_FN] = LAYOUT_charybdis_4x6(
-    XXXXXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      XXXXXXXXXX,
-    __________, KC_F5,      KC_F6,      KC_F7,      KC_F8,  XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      __________,
-    __________, KC_F9,      KC_F10,     KC_F11,     KC_F12, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      __________,
-   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
+[_FN] = LAYOUT_charybdis_4x6(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, KC_ESCAPE, KC_ENTER, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      XXXXXXXXXX,
+    __________, KC_LALT,      KC_SPACE,      XXXXXXXXXX,      XXXXXXXXXX,  XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      __________,
+    __________, XXXXXXXXXX,      XXXXXXXXXX,     KC_LCTRL,     XXXXXXXXXX, KC_BSPACE,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      __________,
+                                      __________, __________,  __________,                          __________, __________,
+                                                   __________, __________,                          __________
+),
 
-
-
-          [_MY_SPEC_1] = LAYOUT_charybdis_4x6(
-    MY_KC_16,   MY_KC_1,    MY_KC_2,    MY_KC_3,    MY_KC_4,    MY_KC_5,                            XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    MY_KC_17,   MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________,
-    MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           XXXXXXXXXX, XXXXXXXXXX, __________, __________, __________, __________,
-   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
-  
-
-
-          [_MY_SPEC_2] = LAYOUT_charybdis_4x6(
- MY_KC_16_MEH,   MY_KC_1_MEH,    MY_KC_2_MEH,    MY_KC_3_MEH,    MY_KC_4_MEH,    MY_KC_5_MEH,    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    MY_KC_17_MEH,   MY_KC_6_MEH,    MY_KC_7_MEH,    MY_KC_8_MEH,    MY_KC_9_MEH,    MY_KC_10_MEH,   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________,
-    MY_KC_18_MEH,   MY_KC_11_MEH,   MY_KC_12_MEH,   MY_KC_13_MEH,   MY_KC_14_MEH,   MY_KC_15_MEH,   XXXXXXXXXX, XXXXXXXXXX, __________, __________, __________, __________,
-   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
-
-          [_MY_SPEC_3] = LAYOUT_charybdis_4x6(
- MY_KC_16_HYPR,   MY_KC_1_HYPR,    MY_KC_2_HYPR,    MY_KC_3_HYPR,    MY_KC_4_HYPR,    MY_KC_5_HYPR,    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    MY_KC_17_HYPR,   MY_KC_6_HYPR,    MY_KC_7_HYPR,    MY_KC_8_HYPR,    MY_KC_9_HYPR,    MY_KC_10_HYPR,   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, __________, __________,
-    MY_KC_18_HYPR,   MY_KC_11_HYPR,   MY_KC_12_HYPR,   MY_KC_13_HYPR,   MY_KC_14_HYPR,   MY_KC_15_HYPR,   XXXXXXXXXX, XXXXXXXXXX, __________, __________, __________, __________,
-   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-                                   __________, __________,   XXXXXXXXXX,      __________,  __________,
-                                           XXXXXXXXXX, XXXXXXXXXX,          XXXXXXXXXX
-  ),
-
-
+[_MY_SPEC_1] = LAYOUT_charybdis_4x6(
+   XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                          XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    MY_KC_16,   MY_KC_1,    MY_KC_2,    MY_KC_3,    MY_KC_4,    MY_KC_5,                            MY_KC_5_HYPR, MY_KC_4_HYPR, MY_KC_3_HYPR, MY_KC_2_HYPR, MY_KC_1_HYPR, MY_KC_16_HYPR,
+    MY_KC_17,   MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           MY_KC_10_HYPR, MY_KC_9_HYPR, MY_KC_8_HYPR, MY_KC_7_HYPR, MY_KC_6_HYPR, MY_KC_17_HYPR,
+    MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           MY_KC_15_HYPR, MY_KC_14_HYPR, MY_KC_13_HYPR, MY_KC_12_HYPR, MY_KC_11_HYPR, MY_KC_18_HYPR,
+                                      __________, __________,  __________,                          __________, __________,
+                                                   __________, __________,                          __________
+),
 };
 
 static bool one_shot_modifiers_through_flg = false;
@@ -348,22 +319,8 @@ one_shot_modifier one_shot_modifiers[] = {
     false
   },
   {
-    MY_KC_SPEC_2,
-    KC_TAB,
-    MY_KC_SPEC_2,
-    _MY_SPEC_2,
-    false
-  },
-  {
-    MY_KC_SPEC_3,
-    KC_DEL,
-    MY_KC_SPEC_3,
-    _MY_SPEC_3,
-    false
-  },
-  {
     MY_KC_FN,
-    XXXXXXXXXX,
+    KC_ENTER,
     MY_KC_FN,
     _FN,
     false
@@ -377,21 +334,21 @@ one_shot_modifier one_shot_modifiers[] = {
   },
   {
     MY_KC_SYM1,
-    XXXXXXXXXX,
+    KC_SPACE,
     MY_KC_SYM1,
     _SYMBOL1,
     false
   },
   {
     MY_KC_SYM2,
-    XXXXXXXXXX,
+    KC_BSPACE,
     MY_KC_SYM2,
     _SYMBOL2,
     false
   },
   {
     MY_KC_NUM,
-    XXXXXXXXXX,
+    KC_ESCAPE,
     MY_KC_NUM,
     _NUMBER,
     false
