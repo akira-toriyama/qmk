@@ -15,9 +15,8 @@ enum custom_keycodes {
   _NUMBER,
   _SYMBOL1,
   _SYMBOL2,
-  _FN,
-  _CURSOR,
   _MY_SPEC_1,
+  _MY_SPEC_2,
 
   // 装飾用
   __________,
@@ -105,11 +104,8 @@ enum custom_keycodes {
   MY_KC_SYM1,
   MY_KC_SYM2,
   MY_KC_NUM,
-  MY_KC_FN,
-  MY_KC_CURSOR,
   MY_KC_SPEC_1,
   MY_KC_SPEC_2,
-  MY_KC_SPEC_3,
 
   MY_DRAG_SCROLL,
 };
@@ -119,9 +115,9 @@ enum custom_keycodes {
 #define _NUMBER 1
 #define _SYMBOL1 2
 #define _SYMBOL2 3
-#define _FN 4
-#define _CURSOR 5
 #define _MY_SPEC_1 6
+#define _MY_SPEC_2 7
+
 
 // 装飾用
 #define __________ KC_TRNS
@@ -219,10 +215,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT_charybdis_4x6(
     XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                           XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     KC_TAB, KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,
-    MY_KC_SYM1,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,       KC_M,      MY_KC_SYM2,
-    MY_KC_NUM,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_LEFT,     KC_DOWN,  KC_RIGHT,   KC_UP, MY_KC_FN,
+    MY_KC_SYM1,   KC_A,       KC_S,       KC_D,       KC_F,       KC_G,                               KC_H,       KC_J,       KC_K,       KC_L,          KC_UP,   MY_KC_SYM2,
+    MY_KC_NUM,  KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,                               KC_N,       KC_M, KC_LEFT,     KC_DOWN,  KC_RIGHT,    KC_ENTER,
                                            MY_KC_LL, MY_KC_LR,   MY_DRAG_SCROLL,                 MY_KC_RL,  MY_KC_RR,
-                                                   KC_MS_BTN1, KC_MS_BTN2,                      MY_KC_SPEC_1
+                                                   MY_KC_SPEC_2, XXXXXXXXXX,                      MY_KC_SPEC_1
 ),
 
 [_NUMBER] = LAYOUT_charybdis_4x6(
@@ -252,20 +248,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                    __________, __________,                          __________
 ),
 
-[_FN] = LAYOUT_charybdis_4x6(
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
-    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, KC_ESCAPE, KC_ENTER, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      XXXXXXXXXX,
-    __________, KC_LALT,      KC_SPACE,      XXXXXXXXXX,      XXXXXXXXXX,  XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      __________,
-    __________, XXXXXXXXXX,      XXXXXXXXXX,     KC_LCTRL,     XXXXXXXXXX, KC_BSPACE,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      __________,
-                                      __________, __________,  __________,                          __________, __________,
-                                                   __________, __________,                          __________
-),
-
 [_MY_SPEC_1] = LAYOUT_charybdis_4x6(
    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                          XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
     MY_KC_16,   MY_KC_1,    MY_KC_2,    MY_KC_3,    MY_KC_4,    MY_KC_5,                            MY_KC_5_HYPR, MY_KC_4_HYPR, MY_KC_3_HYPR, MY_KC_2_HYPR, MY_KC_1_HYPR, MY_KC_16_HYPR,
     MY_KC_17,   MY_KC_6,    MY_KC_7,    MY_KC_8,    MY_KC_9,    MY_KC_10,                           MY_KC_10_HYPR, MY_KC_9_HYPR, MY_KC_8_HYPR, MY_KC_7_HYPR, MY_KC_6_HYPR, MY_KC_17_HYPR,
     MY_KC_18,   MY_KC_11,   MY_KC_12,   MY_KC_13,   MY_KC_14,   MY_KC_15,                           MY_KC_15_HYPR, MY_KC_14_HYPR, MY_KC_13_HYPR, MY_KC_12_HYPR, MY_KC_11_HYPR, MY_KC_18_HYPR,
+                                      __________, __________,  __________,                          __________, __________,
+                                                   __________, __________,                          __________
+),
+
+
+[_MY_SPEC_2] = LAYOUT_charybdis_4x6(
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                              XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,
+    XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      XXXXXXXXXX,
+    KC_SPACE, KC_LSHIFT,      KC_LGUI,      KC_LALT,      KC_LCTRL,  XXXXXXXXXX,                         XXXXXXXXXX, KC_MS_BTN1, KC_MS_BTN2, KC_MS_BTN3, XXXXXXXXXX,      KC_BSPACE,
+    KC_ESCAPE, XXXXXXXXXX,      XXXXXXXXXX,     XXXXXXXXXX,     XXXXXXXXXX, XXXXXXXXXX,                         XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX, XXXXXXXXXX,      KC_ENTER,
                                       __________, __________,  __________,                          __________, __________,
                                                    __________, __________,                          __________
 ),
@@ -318,18 +315,11 @@ one_shot_modifier one_shot_modifiers[] = {
     _MY_SPEC_1,
     false
   },
-  {
-    MY_KC_FN,
-    KC_ENTER,
-    MY_KC_FN,
-    _FN,
-    false
-  },
-  {
-    MY_KC_CURSOR,
-    XXXXXXXXXX,
-    MY_KC_CURSOR,
-    _CURSOR,
+    {
+    MY_KC_SPEC_2,
+    MY_KC_0,
+    MY_KC_SPEC_2,
+    _MY_SPEC_2,
     false
   },
   {
@@ -661,9 +651,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
   // レイヤー切り変え
   case MY_KC_SPEC_1:
   case MY_KC_SPEC_2:
-  case MY_KC_SPEC_3:
-  case MY_KC_CURSOR:
-  case MY_KC_FN:
   case MY_KC_SYM1:
   case MY_KC_SYM2:
   case MY_KC_NUM:
